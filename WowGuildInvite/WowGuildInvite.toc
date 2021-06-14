@@ -1,0 +1,11 @@
+## Interface: 20501
+## Title: |cffff306fWow Guild Invite|r
+## Notes: Auto guild invite for goodies - fe
+## Author: wyvern800
+## Version: 0.1
+## DefaultState: enabled
+## SavedVariablesPerCharacter: WowGuildInvite
+## RequiredDeps: MessageQueue
+
+WowGuildInvite_Options.lua
+WowGuildInvite.lua

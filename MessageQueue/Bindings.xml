@@ -1,0 +1,5 @@
+<Bindings>
+	<Binding name="MESSAGEQUEUE" description="Sends pending message in queue" header="MESSAGEQUEUE_HEADER">
+		MessageQueue.Run()
+	</Binding>
+</Bindings>

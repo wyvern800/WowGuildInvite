@@ -1,0 +1,7 @@
+## Interface: 90100
+## Title: MessageQueue
+## Author: LenweSaralonde
+## Version: 0.3.0
+## Notes: Securely send messages in chat channels in response to hardware event
+
+MessageQueue.lua
