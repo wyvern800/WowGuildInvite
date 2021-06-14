@@ -1,4 +1,4 @@
-## WowGuildInvite
+# WowGuildInvite
 Ever wanted to recruit some guildies without touching the keyboard? well now here is your salvation.
 
 ## What this addon does?
@@ -8,7 +8,7 @@ It will spam messages with a limited treshold of five minutes per message (**to 
 [MessageQueue](https://github.com/LenweSaralonde/MessageQueue) from LenweSaralonde
 This dependency is a must have as WoW system has a anti-spam system that can be bypassed by this library [Click here to understand better](https://github.com/LenweSaralonde/MessageQueue#readme)
 
-# How to install?
+## How to install?
 1. Place both folders (*MessageQueue, WowGuildInvite*) to your **WoW/_classic_/Interface/Addons** and enable in your game.  
 1. Acess the addon configurations by sending the command **/wgi** or access by **ESC/Interfaces/WowGuildInvite**.  
 1. Config as your liking and mark the checkbox **Keep Spamming?** to have it spamming.  
@@ -24,4 +24,4 @@ Enjoy! And please star if you liked my addon, this was a pain in the #@% to achi
 [MessageQueue](https://github.com/LenweSaralonde/MessageQueue) by LenweSaralonde
 [Social Media Preview Image](https://github.com/Th3mike) by Th3Mike
 
-## USE AT YOUR OWN RISK, THIS WAS TESTED FOR A WHILE AND I DIDN'T GET BANNED OR MUTED, SO IF YOU PLAN ON USING THIS, PLEASE DONT CHANGE THE 5 MINUTES COOLDOWN THRESOLD, USING AUTOHOTKEY WONT BAN YOU AS IT ISN'T AGGAINST T.O.S
+## USE AT YOUR OWN RISK, THIS WAS TESTED FOR A WHILE AND I DIDN'T GET BANNED OR MUTED, SO IF YOU PLAN ON USING THIS, PLEASE DONT CHANGE THE 5 MINUTES COOLDOWN THRESOLD, USING AUTOHOTKEY WONT BAN YOU AS IT ISN'T AGAINST T.O.S
