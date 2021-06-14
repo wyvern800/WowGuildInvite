@@ -21,7 +21,7 @@ Enjoy! And please star if you liked my addon, this was a pain in the #@% to achi
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 
 ## Credits
-[MessageQueue](https://github.com/LenweSaralonde/MessageQueue) by LenweSaralonde
-[Social Media Preview Image](https://github.com/Th3mike) by Th3Mike
+[MessageQueue](https://github.com/LenweSaralonde/MessageQueue) by LenweSaralonde  
+[Social Media Preview Image](https://github.com/Th3mike) by Th3Mike  
 
 ## USE AT YOUR OWN RISK, THIS WAS TESTED FOR A WHILE AND I DIDN'T GET BANNED OR MUTED, SO IF YOU PLAN ON USING THIS, PLEASE DONT CHANGE THE 5 MINUTES COOLDOWN THRESOLD, USING AUTOHOTKEY WONT BAN YOU AS IT ISN'T AGAINST T.O.S
