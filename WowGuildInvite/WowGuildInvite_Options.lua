@@ -59,11 +59,15 @@ function WowGuildInvite_CreateOptions()
   WowGuildInvite_Options_CreateEditboxLarge(160, 120, "WowGuildInvite_DNDBox")
 	WowGuildInvite_DNDBox:SetScript("OnTextChanged", function()
 		WowGuildInvite.dnd = WowGuildInvite_DNDBox:GetText();
+    WowGuildInvite.dndSet = false;
 	end);
 
   -- Creates the keep spamming checkbox
   WowGuildInvite_Options_CreateCheckbutton(-5, 160, "WowGuildInvite_EnabledCheck","Keep Spamming?");
   WowGuildInvite_EnabledCheck:SetScript("OnClick", function()
+        if WowGuildInvite.addonEnabled == false then
+          WowGuildInvite.dndSet = false;
+        end
         WowGuildInvite.addonEnabled =  WowGuildInvite_EnabledCheck:GetChecked();
 		end);
   end
