@@ -27,6 +27,11 @@ function WowGuildInviteEvent(self, event, msg, sender, ...)
         print(prefix.." Guid invite sent to player: "..player.."!")
 
         GuildInvite(player)
+
+        MessageQueue.SendChatMessage("[WowGuildInvite] "..WowGuildInvite.invitingCallback, 'WHISPER', nil, sender, function()
+        end)
+        return
+
       end)
       return
 
