@@ -1,8 +1,8 @@
 ## Interface: 20501
 ## Title: |cffff306fWow Guild Invite|r
-## Notes: Auto guild invite for goodies - fe
+## Notes: Auto soft-spammer and guild auto inviter for goodies
 ## Author: wyvern800
-## Version: 0.1
+## Version: 0.2
 ## DefaultState: enabled
 ## SavedVariablesPerCharacter: WowGuildInvite
 ## RequiredDeps: MessageQueue

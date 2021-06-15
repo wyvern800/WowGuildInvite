@@ -4,11 +4,11 @@ Ever wanted to recruit some guildies without touching the keyboard? well now her
 ![GitHub all releases](https://img.shields.io/github/downloads/wyvern800/WowGuildInvite/total?color=k)
 
 ## What this addon does?
-It will spam messages with a limited treshold of five minutes per message (**to avoid mutes or bans**) on any chat you choose (**limited to one atm**) and also set a DND message that players will receive whenever whispering you, that way you can organicly recruit members to your discord or pugs, or any other event you plan on.
+It will spam messages with a limited treshold of five minutes per message (**to avoid mutes or bans**) on any chat you choose (**limited to one atm**) and also set a DND message that players will receive whenever whispering you, that way you can organicly recruit members to your discord or pugs, or any other event you plan on.  
 
 ## Required dependencies (comes with this)
-[MessageQueue](https://github.com/LenweSaralonde/MessageQueue) from LenweSaralonde
-This dependency is a must have as WoW system has a anti-spam system that can be bypassed by this library [Click here to understand better](https://github.com/LenweSaralonde/MessageQueue#readme)
+[MessageQueue](https://github.com/LenweSaralonde/MessageQueue) from LenweSaralonde  
+This dependency is a must have as WoW system has a anti-spam system that can be bypassed by this library [Click here to understand better](https://github.com/LenweSaralonde/MessageQueue#readme)  
 
 ## How to install?
 1. Place both folders (*MessageQueue, WowGuildInvite*) to your **WoW/_classic_/Interface/Addons** and enable in your game.  
