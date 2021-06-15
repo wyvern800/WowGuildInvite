@@ -16,13 +16,17 @@ function WowGuildInviteEvent(self, event, msg, sender, ...)
     print(prefix.." loaded, type /wgi to open the configurations! - created by wyvern800")
     return
   elseif (event == "CHAT_MSG_WHISPER") then
-    local channel = GetChannelName(string.lower(WowGuildInvite.channel));
+    --local channel = GetChannelName(string.lower(WowGuildInvite.channel));
 
     -- Sends the guild invite through whisper
     if string.lower(msg) == "inv" then
-      MessageQueue.SendChatMessage("/i "..sender, 'SAY', nil, nil, function()
-        print(prefix.." Guid invite sent to player: "..sender.."!")
-        SendChatMessage("[WowGuildInvite] "..WowGuildInvite.invitingCallback, "WHISPER", nil, sender)
+      MessageQueue.SendChatMessage("", 'SAY', nil, nil, function()
+
+        player, realm = strsplit( "-", sender, 2 )
+
+        print(prefix.." Guid invite sent to player: "..player.."!")
+
+        GuildInvite(player)
       end)
       return
 
@@ -58,7 +62,7 @@ function Process()
     local channel = GetChannelName(string.lower(WowGuildInvite.channel));
     if (channel ~= nil) then
       --SendChatMessage(WowGuildInvite.message, "CHANNEL", nil, channel)
-      MessageQueue.SendChatMessage("[WowGuildInvite] "..WowGuildInvite.message, 'CHANNEL', nil, channel, function()
+      MessageQueue.SendChatMessage(WowGuildInvite.message, 'CHANNEL', nil, channel, function()
       end)
       return
 
@@ -80,7 +84,7 @@ do
       last_check = GetTime();
       saved = true;
       --print("saved = true")
-     elseif GetTime() >= last_check + 300 then --300
+     elseif GetTime() >= last_check + 300 then
       saved = false
       --print("saved = false")
     else
