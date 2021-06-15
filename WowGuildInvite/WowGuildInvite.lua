@@ -80,7 +80,7 @@ do
       last_check = GetTime();
       saved = true;
       --print("saved = true")
-     elseif GetTime() >= last_check + 20 then --300
+     elseif GetTime() >= last_check + 300 then --300
       saved = false
       --print("saved = false")
     else
