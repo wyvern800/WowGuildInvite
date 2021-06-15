@@ -1,15 +1,19 @@
 -- Our database
 WowGuildInvite = {
   channel = "LookingForGroup",
-  message = "This is a message",
-  dnd = "This is a DND, set is as you like",
+  message = "This is a message that will be spammed to the channels | leave this here whisper me [info] to know better about it!",
+  dnd = "Thank you for the interest | Whisper me [inv] for an auto invite or [discord] to get our guild discord link!",
+  invitingCallback = "I sent you the guild invitation, thanks for joining if you accept, if you still need our discord link, whisper me [discord] or [disc]!",
+  discordLink = "https://discordlinkhere.gg",
   addonEnabled = false,
 }
+
+local prefix = "|cffff00ff[WowGuildInvite]|r"
 
 -- Resets the configs
 function ResetConfigs()
   WowGuildInvite_AddonLoadedOptions()
-  print("|cffff00ff[WowGuildInvite]|r Settings resetted!")
+  print(prefix.." Settings resetted!")
 end
 
 -- Loads the options
@@ -18,22 +22,36 @@ function WowGuildInvite_AddonLoadedOptions()
   --WowGuildInvite_DelayBox:SetText(WowGuildInvite.delay);
   WowGuildInvite_MessageBox:SetText(WowGuildInvite.message);
   WowGuildInvite_DNDBox:SetText(WowGuildInvite.dnd);
+  WowGuildInvite_InvBox:SetText(WowGuildInvite.invitingCallback);
+  WowGuildInvite_DiscordBox:SetText(WowGuildInvite.discordLink);
   --WowGuildInvite_DelayBox:SetCursorPosition(0)
   WowGuildInvite_ChannelBox:SetCursorPosition(0)
   WowGuildInvite_MessageBox:SetCursorPosition(0);
   WowGuildInvite_DNDBox:SetCursorPosition(0);
+  WowGuildInvite_InvBox:SetCursorPosition(0);
+  WowGuildInvite_DiscordBox:SetCursorPosition(0);
   WowGuildInvite_EnabledCheck:SetChecked(WowGuildInvite.addonEnabled);
+
 end
 
 function WowGuildInvite_CreateOptions()
   local options = CreateFrame("Frame", "WowGuildInvite_Options")
   options.name = "WowGuildInvite"
   InterfaceOptions_AddCategory(options);
-  WowGuildInvite_Options_CreateLabel(0, 0, "WowGuildInvite Config - Created by wyvern800");
+
+  -- Channel
+  WowGuildInvite_Options_CreateLabel(0, 0, "WowGuildInvite Config");
   WowGuildInvite_Options_CreateLabel(0, 40, "Invite Channel")
   WowGuildInvite_Options_CreateEditbox(160, 40, false, "WowGuildInvite_ChannelBox")
 	WowGuildInvite_ChannelBox:SetScript("OnTextChanged", function()
 		WowGuildInvite.channel = WowGuildInvite_ChannelBox:GetText();
+	end);
+
+  -- Discord link
+  WowGuildInvite_Options_CreateLabel(300, 40, "Discord Link")
+  WowGuildInvite_Options_CreateEditbox(440, 40, false, "WowGuildInvite_DiscordBox")
+	WowGuildInvite_DiscordBox:SetScript("OnTextChanged", function()
+		WowGuildInvite.discordLink = WowGuildInvite_DiscordBox:GetText();
 	end);
 
   -- Creates the cooldown widget
@@ -48,28 +66,36 @@ function WowGuildInvite_CreateOptions()
 	end);]]--
 
   -- Creates the message widget
-  WowGuildInvite_Options_CreateLabel(0, 80, "Invite Message")
+  WowGuildInvite_Options_CreateLabel(0, 80, "Broadcast")
   WowGuildInvite_Options_CreateEditboxLarge(160, 80, "WowGuildInvite_MessageBox")
 	WowGuildInvite_MessageBox:SetScript("OnTextChanged", function()
 		WowGuildInvite.message = WowGuildInvite_MessageBox:GetText();
 	end);
 
   -- Creates the DND widget
-  WowGuildInvite_Options_CreateLabel(0, 120, "(DND) Message")
+  WowGuildInvite_Options_CreateLabel(0, 120, "Response")
   WowGuildInvite_Options_CreateEditboxLarge(160, 120, "WowGuildInvite_DNDBox")
 	WowGuildInvite_DNDBox:SetScript("OnTextChanged", function()
 		WowGuildInvite.dnd = WowGuildInvite_DNDBox:GetText();
-    WowGuildInvite.dndSet = false;
+    --WowGuildInvite.dndSet = false;
+	end);
+
+  -- Creates the invitation msg widget
+  WowGuildInvite_Options_CreateLabel(0, 160, "Post Invite")
+  WowGuildInvite_Options_CreateEditboxLarge(160, 160, "WowGuildInvite_InvBox")
+	WowGuildInvite_InvBox:SetScript("OnTextChanged", function()
+		WowGuildInvite.invitingCallback = WowGuildInvite_InvBox:GetText();
 	end);
 
   -- Creates the keep spamming checkbox
-  WowGuildInvite_Options_CreateCheckbutton(-5, 160, "WowGuildInvite_EnabledCheck","Keep Spamming?");
+  WowGuildInvite_Options_CreateCheckbutton(-5, 200, "WowGuildInvite_EnabledCheck","Keep Spamming?");
   WowGuildInvite_EnabledCheck:SetScript("OnClick", function()
-        if WowGuildInvite.addonEnabled == false then
+        --[[if WowGuildInvite.addonEnabled == false then
           WowGuildInvite.dndSet = false;
-        end
+        end]]--
         WowGuildInvite.addonEnabled =  WowGuildInvite_EnabledCheck:GetChecked();
-		end);
+	  end);
+    WowGuildInvite_Options_CreateLabel2(0, 240, "Addon created by wyvern800 - (Slayerhawk TBC Faerlina)");
   end
 
   -- Function used to draw checkbutton
@@ -86,6 +112,41 @@ function WowGuildInvite_CreateOptions()
 	  uiObject:SetTextColor(1, 0.8, 0);
     uiObject:SetFont("Fonts\\FRIZQT__.TTF", 16);
     uiObject:SetText(text);
+
+    --[[local MyFrame = CreateFrame("Frame", "MyFrame")
+    MyFrame:SetFrameStrata("HIGH")
+    MyFrame:SetFrameLevel(5)
+    MyFrame:SetToplevel(true)
+
+    uiObject:SetScript("OnEnter", function()
+      MyFrame:SetAlpha(1);
+    end);
+
+    uiObject:SetScript("OnLeave", function()
+      MyFrame:SetAlpha(0);
+    end);]]--
+end
+
+-- Function used to draw label
+function WowGuildInvite_Options_CreateLabel2(xOffset, yOffset, text)
+  local uiObject = WowGuildInvite_Options:CreateFontString(nil, "Overlay");
+  uiObject:SetPoint("TOPLEFT", xOffset + 16, -yOffset - 16);
+  uiObject:SetTextColor(1, 50, 0);
+  uiObject:SetFont("Fonts\\FRIZQT__.TTF", 12);
+  uiObject:SetText(text);
+
+  --[[local MyFrame = CreateFrame("Frame", "MyFrame")
+  MyFrame:SetFrameStrata("HIGH")
+  MyFrame:SetFrameLevel(5)
+  MyFrame:SetToplevel(true)
+
+  uiObject:SetScript("OnEnter", function()
+    MyFrame:SetAlpha(1);
+  end);
+
+  uiObject:SetScript("OnLeave", function()
+    MyFrame:SetAlpha(0);
+  end);]]--
 end
 
 -- Function used to draw edit box
