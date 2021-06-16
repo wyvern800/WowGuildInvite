@@ -1,6 +1,5 @@
 --[[
   Author: wyvern800
-  Character: Slayerhawk (TBC Faerlina)
 ]]
 local wgi = CreateFrame'Frame'
 --local dndSet = false;

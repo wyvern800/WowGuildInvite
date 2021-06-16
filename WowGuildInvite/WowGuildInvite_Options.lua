@@ -95,7 +95,7 @@ function WowGuildInvite_CreateOptions()
         end]]--
         WowGuildInvite.addonEnabled =  WowGuildInvite_EnabledCheck:GetChecked();
 	  end);
-    WowGuildInvite_Options_CreateLabel2(0, 240, "Addon created by wyvern800 - (Slayerhawk TBC Faerlina)");
+    WowGuildInvite_Options_CreateLabel2(0, 240, "Addon created by wyvern800 - Support me at patreon.com/wyvern800");
   end
 
   -- Function used to draw checkbutton

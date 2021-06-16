@@ -2,7 +2,7 @@
 ## Title: |cffff306fWow Guild Invite|r
 ## Notes: Auto soft-spammer and guild auto inviter for goodies
 ## Author: wyvern800
-## Version: 0.2
+## Version: 0.3
 ## DefaultState: enabled
 ## SavedVariablesPerCharacter: WowGuildInvite
 ## RequiredDeps: MessageQueue
