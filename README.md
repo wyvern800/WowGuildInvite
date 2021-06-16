@@ -19,7 +19,7 @@ It will spam messages with a limited treshold of five minutes per message (**to 
 Enjoy! And please star if you liked my addon, this was a pain in the #@% to achieve as I had nearly zero lua knowledge :p
 
 ## Media
-<div align="center"> ![Screenshot](https://github.com/wyvern800/WowGuildInvite/blob/main/media.png)</div>
+<div align="center"> <img src="https://github.com/wyvern800/WowGuildInvite/blob/main/docs/media.png"></img></div>
 
 ## License
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
