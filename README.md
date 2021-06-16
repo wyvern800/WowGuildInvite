@@ -19,7 +19,7 @@ It will spam messages with a limited treshold of five minutes per message (**to 
 Enjoy! And please star if you liked my addon, this was a pain in the #@% to achieve as I had nearly zero lua knowledge :p
 
 ## Media
-<div align="center"> ![Alt text](media.png?raw=true "Media")</div>
+<div align="center"> ![Screenshot](media.png)</div>
 
 ## License
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
